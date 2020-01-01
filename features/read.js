@@ -1,13 +1,13 @@
 'use strict';
 
-module.exports.firstGET = async event => {
-    const message = "thanks for visiting my GET route";
-  return {
+module.exports.getTodo = async event => {  
+  const todo = "art!";
 
+  return {
     statusCode: 200,
     body: JSON.stringify(
       {
-        message: message
+        todo: todo
       },
       null,
       2
