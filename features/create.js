@@ -4,7 +4,7 @@ module.exports.createTodo = async (event, context) => {
     const body = JSON.parse(event.body);
 
     const todo = await db.todo.create({
-      task: body.todo
+      task: body.task
     });
 
     db.sequelize.close();

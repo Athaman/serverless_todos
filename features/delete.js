@@ -15,7 +15,7 @@ module.exports.deleteTodo = async (event, context) => {
         statusCode: 200,
         body: JSON.stringify(
           {
-            effected: count
+            affected: count
           },
           null,
           2

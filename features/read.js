@@ -3,7 +3,11 @@
 const db = require('../db/db');
 
 module.exports.getTodo = async event => {  
-  const todo = "art!";
+  const id = event.pathParameters.id;
+  const todo = await db.todo.findOne({
+    where: { id: id},
+    attributes: ['id', 'task', 'completed']
+  });
 
   return {
     statusCode: 200,

@@ -46,7 +46,7 @@ functions:
     handler: features/read.getTodo
     events:
       - http:
-          path: todo
+          path: todo/{id}
           method: get
   listTodos:
     handler: features/read.listTodos
@@ -68,6 +68,13 @@ functions:
       - http:
           path: todo/{id}
           method: delete
+
+  updateTodo:
+    handler: features/update.updateTodo
+    events:
+      - http:
+          path: todo/{id}
+          method: patch
 #    Define function environment variables here
 #    environment:
 #      variable2: value2
