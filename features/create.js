@@ -1,15 +1,19 @@
+const db = require('../db/db');
+
 module.exports.createTodo = async (event, context) => {
     const body = JSON.parse(event.body);
 
-    const mockDB = body.todo + ' is now saved to "db".';
+    const todo = await db.todo.create({
+      task: body.todo
+    });
 
-    console.log(mockDB);
+    db.sequelize.close();
 
     return {
         statusCode: 200,
         body: JSON.stringify(
           {
-            todo: mockDB
+            todo: todo
           },
           null,
           2
