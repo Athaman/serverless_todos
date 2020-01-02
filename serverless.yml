@@ -61,6 +61,13 @@ functions:
       - http:
           path: todo
           method: post
+
+  deleteTodo:
+    handler: features/delete.deleteTodo
+    events:
+      - http:
+          path: todo/{id}
+          method: delete
 #    Define function environment variables here
 #    environment:
 #      variable2: value2

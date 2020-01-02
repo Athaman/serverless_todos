@@ -8,7 +8,6 @@ const sequelize = new Sequelize(
     host: process.env.DB_HOST,
     dialect: 'postgres'
 });
-console.log('whargarbl');
 
 const todo = require('../models/todo')(sequelize, DataTypes);
 
