@@ -7,3 +7,4 @@ jspm_packages
 
 # env file for secrets
 .env
+.env.yml

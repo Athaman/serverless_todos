@@ -5,8 +5,14 @@ provider:
   runtime: nodejs12.x
   stage: dev
   region: ap-southeast-2
-  memory: 128
+  memorySize: 128
   timeout: 30
+  environment:
+    # You need to set up a .env.yaml file of your own with your app password in it
+    DB_HOST: ${file(./.env.yml):DB_HOST}
+    DB_PASS: ${file(./.env.yml):DB_PASS}
+    DB_USER: ${file(./.env.yml):DB_USER}
+    DB_NAME: ${file(./.env.yml):DB_NAME}
   apiKeys:
     - todoAPI
 
